@@ -3,10 +3,71 @@
 /* Dark mode is driven by the `dark` class on <html> (set by ThemeContext). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Design tokens. Colors and fonts will be filled in from the Figma design. */
-@theme {
+/*
+  Color tokens. Each theme only swaps the variable values, so components use
+  one class (e.g. bg-surface) instead of repeating light/dark pairs.
+  Values are approximated from the Figma preview; to be matched exactly.
+*/
+:root {
+  --page: #ffffff;
+  --surface: #f4f4f4;
+  --card: #ffffff;
+  --ink: #0a0a14;
+  --muted: #6b7280;
+  --brand: #e92577;
+  --brand-soft: #ea2678;
+  --decor: #d9d9d9;
+  --project-1: #ddeefe;
+  --project-2: #d9f6f1;
+  --project-3: #fde8f1;
+  --tag: #ffffff;
+  --screen: #1f2937;
+  --toggle-track: #e92577;
+  --toggle-knob: #ffe86e;
+}
+
+.dark {
+  --page: #2a262b;
+  --surface: #252128;
+  --card: #525252;
+  --ink: #ffffff;
+  --muted: #d1d5db;
+  --brand: #e92577;
+  --brand-soft: #f472b6;
+  --decor: #525252;
+  --project-1: #2d3235;
+  --project-2: #495351;
+  --project-3: #3f3439;
+  --tag: #525252;
+  --screen: #111827;
+  --toggle-track: #3a3a3a;
+  --toggle-knob: #ffe86e;
+}
+
+@theme inline {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-decor: var(--decor);
+  --color-project-1: var(--project-1);
+  --color-project-2: var(--project-2);
+  --color-project-3: var(--project-3);
+  --color-tag: var(--tag);
+  --color-screen: var(--screen);
+  --color-toggle-track: var(--toggle-track);
+  --color-toggle-knob: var(--toggle-knob);
 }
 
 body {
-  @apply antialiased transition-colors duration-300;
+  @apply bg-page font-sans text-ink antialiased transition-colors duration-300;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand;
 }
