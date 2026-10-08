@@ -1,42 +1,38 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import useLanguage from '../hooks/useLanguage'
 import Header from './Header'
+import Highlight from './Highlight'
+import Marker from './Marker'
 import heroPhoto from '../assets/sinem-1.jpg'
 
 export default function Hero() {
   const { content } = useLanguage()
   const { hero } = content
-  const contactHref = hero.links.email ? `mailto:${hero.links.email}` : hero.links.linkedin
 
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden bg-surface">
       {/* Decorative shapes from the design */}
-      <span aria-hidden="true" className="absolute top-0 left-1/3 hidden h-12 w-12 -translate-y-1/2 rounded-full bg-decor md:block" />
-      <span aria-hidden="true" className="absolute right-0 bottom-16 hidden h-8 w-24 translate-x-1/3 rounded-full bg-brand md:block" />
-      <span aria-hidden="true" className="absolute bottom-0 left-2/3 hidden h-12 w-12 translate-y-1/2 rounded-full border-8 border-decor md:block" />
+      <span aria-hidden="true" className="absolute top-0 left-[28%] hidden size-28 -translate-y-1/2 rounded-full bg-decor md:block" />
+      <span aria-hidden="true" className="absolute top-[540px] right-0 hidden h-14 w-32 translate-x-1/4 rounded-full bg-brand lg:block" />
+      <span aria-hidden="true" className="absolute bottom-0 left-[76%] hidden size-30 translate-y-1/2 rounded-full border-[20px] border-decor md:block" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-8 md:py-10">
+      <div className="relative container-page pt-16 pb-24 md:pb-28">
         <Header />
 
-        <div className="mt-10 grid items-center gap-10 md:mt-12 md:grid-cols-[1fr_auto] md:gap-16">
-          <div>
-            <p className="text-xl">{hero.greeting}</p>
-            <h1 id="hero-title" className="mt-4 text-3xl leading-snug font-medium md:text-4xl md:leading-snug">
-              <span className="relative z-0 inline-block">
-                {hero.name}
-                <span aria-hidden="true" className="absolute inset-x-0 bottom-1 -z-10 h-3 rounded bg-brand" />
-              </span>{' '}
+        <div className="mt-12 grid items-center gap-14 md:mt-14 md:grid-cols-[1fr_auto] md:gap-12">
+          <div className="max-w-[630px]">
+            <p className="text-2xl tracking-wide">{hero.greeting}</p>
+            <h1 id="hero-title" className="mt-6 text-3xl leading-[1.5] font-medium tracking-wide md:text-[42px]">
+              <Marker barClassName="-left-3 top-[55%] h-[45%] w-[70%] bg-brand">{hero.name}</Marker>{' '}
               {hero.intro}
             </h1>
 
-            <ul className="mt-8 flex gap-4 text-2xl">
-              {hero.links.linkedin && (
-                <li>
-                  <a href={hero.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-brand">
-                    <FaLinkedinIn />
-                  </a>
-                </li>
-              )}
+            <ul className="mt-12 flex gap-4 text-4xl">
+              <li>
+                <a href={hero.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-brand">
+                  <FaLinkedinIn />
+                </a>
+              </li>
               <li>
                 <a href={hero.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-brand">
                   <FaGithub />
@@ -44,22 +40,22 @@ export default function Hero() {
               </li>
             </ul>
 
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted">
-              {hero.availability}{' '}
-              {contactHref && (
-                <a href={contactHref} target="_blank" rel="noreferrer" className="text-brand underline underline-offset-4">
-                  {hero.contactLabel}
-                </a>
-              )}
+            <p className="mt-6 text-lg leading-loose tracking-wide">
+              <Highlight text={hero.availability} className="text-accent" />
+              <br />
+              {hero.contactLabel}{' '}
+              <a href={`mailto:${hero.links.email}`} className="text-accent underline underline-offset-4">
+                {hero.links.email}
+              </a>
             </p>
           </div>
 
-          <div className="relative mx-auto w-56 md:w-64">
-            <span aria-hidden="true" className="absolute -top-3 -left-3 h-full w-full rounded-3xl bg-brand" />
+          <div className="relative mx-auto mt-6 w-64 md:mt-0 md:w-[340px]">
+            <span aria-hidden="true" className="absolute -top-5 -left-5 size-full rounded-3xl bg-brand" />
             <img
               src={heroPhoto}
               alt={hero.photoAlt}
-              className="relative aspect-square w-full rounded-3xl object-cover object-[60%_30%] shadow-lg"
+              className="relative aspect-square w-full rounded-3xl object-cover object-[60%_30%]"
             />
           </div>
         </div>

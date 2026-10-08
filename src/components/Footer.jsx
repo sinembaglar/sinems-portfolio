@@ -1,10 +1,11 @@
 import useLanguage from '../hooks/useLanguage'
 import Highlight from './Highlight'
+import Marker from './Marker'
 
 const linkColors = {
-  github: 'text-[#1769ff]',
-  linkedin: 'text-[#0077b5]',
-  email: 'text-[#af0c48] dark:text-brand-soft',
+  github: 'text-link-github',
+  linkedin: 'text-link-linkedin',
+  email: 'text-accent',
 }
 
 export default function Footer() {
@@ -17,15 +18,15 @@ export default function Footer() {
     .map(([key, url]) => ({ key, url: key === 'email' ? `mailto:${url}` : url }))
 
   return (
-    <footer className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 py-16 md:flex-row md:justify-center md:gap-16">
-      <p className="max-w-sm text-center text-3xl leading-snug font-medium md:text-right">
+    <footer className="container-page flex flex-col items-center gap-10 py-24 md:flex-row md:items-start md:justify-center md:gap-14">
+      <p className="max-w-[480px] text-center text-3xl leading-[1.45] font-medium md:text-right md:text-[42px]">
         <Highlight
           text={footer.message}
-          className="underline decoration-brand decoration-4 underline-offset-8"
+          wrap={(words) => <Marker barClassName="inset-x-0 top-[62%] h-[28%] bg-marker">{words}</Marker>}
         />
       </p>
 
-      <ul className="flex gap-6 text-sm font-semibold md:flex-col md:gap-2">
+      <ul className="flex gap-6 text-2xl md:flex-col md:gap-1">
         {items.map(({ key, url }) => (
           <li key={key}>
             <a href={url} target="_blank" rel="noreferrer" className={`hover:underline ${linkColors[key]}`}>

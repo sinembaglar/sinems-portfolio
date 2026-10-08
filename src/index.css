@@ -6,62 +6,79 @@
 /*
   Color tokens. Each theme only swaps the variable values, so components use
   one class (e.g. bg-surface) instead of repeating light/dark pairs.
-  Values are approximated from the Figma preview; to be matched exactly.
+  Light values are taken from the Figma design; dark values are still approximations.
 */
 :root {
   --page: #ffffff;
   --surface: #f4f4f4;
   --card: #ffffff;
+  --card-shadow: #a3a3a3;
   --ink: #0a0a14;
-  --muted: #6b7280;
+  --muted: #777777;
   --brand: #e92577;
-  --brand-soft: #ea2678;
+  --accent: #af0b48;
+  --marker: #81bcff;
   --decor: #d9d9d9;
+  --decor-dark: #525252;
   --project-1: #ddeefe;
-  --project-2: #d9f6f1;
+  --project-2: #daf6f1;
   --project-3: #fde8f1;
   --tag: #ffffff;
-  --screen: #1f2937;
   --toggle-track: #e92577;
-  --toggle-knob: #ffe86e;
+  --toggle-knob: #ffe86d;
+  --link-github: #1769ff;
+  --link-linkedin: #0277b5;
 }
 
 .dark {
   --page: #2a262b;
   --surface: #252128;
   --card: #525252;
+  --card-shadow: #1a171c;
   --ink: #ffffff;
-  --muted: #d1d5db;
+  --muted: #b5b5b5;
   --brand: #e92577;
-  --brand-soft: #f472b6;
+  --accent: #f472b6;
+  --marker: #4b6fa8;
   --decor: #525252;
+  --decor-dark: #9ca3af;
   --project-1: #2d3235;
   --project-2: #495351;
   --project-3: #3f3439;
   --tag: #525252;
-  --screen: #111827;
   --toggle-track: #3a3a3a;
-  --toggle-knob: #ffe86e;
+  --toggle-knob: #ffe86d;
+  --link-github: #60a5fa;
+  --link-linkedin: #38bdf8;
 }
 
 @theme inline {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
 
   --color-page: var(--page);
   --color-surface: var(--surface);
   --color-card: var(--card);
+  --color-card-shadow: var(--card-shadow);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
-  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-marker: var(--marker);
   --color-decor: var(--decor);
+  --color-decor-dark: var(--decor-dark);
   --color-project-1: var(--project-1);
   --color-project-2: var(--project-2);
   --color-project-3: var(--project-3);
   --color-tag: var(--tag);
-  --color-screen: var(--screen);
   --color-toggle-track: var(--toggle-track);
   --color-toggle-knob: var(--toggle-knob);
+  --color-link-github: var(--link-github);
+  --color-link-linkedin: var(--link-linkedin);
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-[1150px] px-6;
 }
 
 body {

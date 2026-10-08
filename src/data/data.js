@@ -42,8 +42,8 @@ const data = {
       name: 'Ben Sinem.',
       intro:
         "Workintech Full Stack Developer programından mezun olmak üzereyim. React ile kullanıcı dostu arayüzler, Spring Boot ile REST API'ler geliştiriyorum. Tanışalım!",
-      availability: 'Full stack developer olarak yeni fırsatlara açığım.',
-      contactLabel: 'Ekibine katılmam için yaz →',
+      availability: { before: '', highlight: 'Full stack developer', after: ' olarak yeni fırsatlara açığım.' },
+      contactLabel: 'Ekibine katılmam için →',
       photoAlt: 'Sinem Bağlar',
       links,
     },
@@ -110,7 +110,7 @@ const data = {
       name: "I'm Sinem.",
       intro:
         "I'm about to graduate from the Workintech Full Stack Developer program. I build user-friendly interfaces with React and REST APIs with Spring Boot. Let's meet!",
-      availability: "I'm open to new opportunities as a full stack developer.",
+      availability: { before: "I'm open to new opportunities as a ", highlight: 'full stack developer', after: '.' },
       contactLabel: 'Invite me to join your team →',
       photoAlt: 'Sinem Bağlar',
       links,

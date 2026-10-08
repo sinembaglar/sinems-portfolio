@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-end">
-      <div className="flex items-center gap-3 text-xs font-bold tracking-wider text-muted">
+      <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] whitespace-nowrap text-muted sm:gap-3 sm:text-[15px]">
         <button
           type="button"
           role="switch"
@@ -19,11 +19,11 @@ export default function Header() {
         >
           <span
             aria-hidden="true"
-            className="relative inline-flex h-5 w-10 items-center rounded-full bg-toggle-track transition-colors"
+            className="relative inline-flex h-6 w-[55px] items-center rounded-full bg-toggle-track transition-colors"
           >
             <span
               className={`absolute h-4 w-4 rounded-full bg-toggle-knob transition-transform duration-300 ${
-                isDark ? 'translate-x-5' : 'translate-x-0.5'
+                isDark ? 'translate-x-1' : 'translate-x-[35px]'
               }`}
             />
           </span>
