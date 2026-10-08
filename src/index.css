@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+/* Dark mode is driven by the `dark` class on <html> (set by ThemeContext). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Colors and fonts will be filled in from the Figma design. */
+@theme {
+}
+
+body {
+  @apply antialiased transition-colors duration-300;
+}
