@@ -37,6 +37,11 @@ const data = {
       // The switch is written in the language it switches to.
       switchLanguage: { before: 'SWITCH TO ', highlight: 'ENGLISH', after: '' },
     },
+    toast: {
+      pending: 'İçerik yükleniyor...',
+      success: 'İçerik sunucudan alındı',
+      error: 'Sunucuya ulaşılamadı, yerel içerik gösteriliyor',
+    },
     hero: {
       greeting: 'Merhaba! 👋',
       name: 'Ben Sinem.',
@@ -104,6 +109,11 @@ const data = {
       darkMode: 'DARK MODE',
       lightMode: 'LIGHT MODE',
       switchLanguage: { before: '', highlight: 'TÜRKÇE', after: "'YE GEÇ" },
+    },
+    toast: {
+      pending: 'Loading content...',
+      success: 'Content received from the server',
+      error: 'Could not reach the server, showing local content',
     },
     hero: {
       greeting: 'Hi! 👋',

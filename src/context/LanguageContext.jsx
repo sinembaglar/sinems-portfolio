@@ -1,6 +1,6 @@
 import { createContext, useEffect } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
-import data from '../data/data'
+import useRemoteContent from '../hooks/useRemoteContent'
 
 const LanguageContext = createContext(null)
 
@@ -9,6 +9,7 @@ const getBrowserLanguage = () => (navigator.language?.startsWith('tr') ? 'tr' : 
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useLocalStorage('language', getBrowserLanguage)
+  const content = useRemoteContent(language)
 
   useEffect(() => {
     document.documentElement.lang = language
@@ -17,7 +18,7 @@ export function LanguageProvider({ children }) {
   const toggleLanguage = () => setLanguage((prev) => (prev === 'tr' ? 'en' : 'tr'))
 
   return (
-    <LanguageContext.Provider value={{ language, content: data[language], toggleLanguage }}>
+    <LanguageContext.Provider value={{ language, content, toggleLanguage }}>
       {children}
     </LanguageContext.Provider>
   )
