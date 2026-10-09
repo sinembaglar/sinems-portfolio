@@ -1,16 +1,39 @@
-# React + Vite
+# Sinem's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React ile geliştirdiğim kişisel portfolyo sitem. Workintech Full Stack Developer programının S12 Frontend Challenge projesi.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Türkçe / İngilizce:** Dil yönetimi i18n paketi kullanmadan Context API ile yapıldı. Tüm metinler tek bir veri dosyasında (`src/data/data.js`), component'ler metinleri buradan okuyor.
+- **Açık / koyu tema:** Renkler CSS değişkenleri olarak tanımlandı, tema değişince yalnızca değişkenlerin değeri değişiyor.
+- **Tercihler hatırlanıyor:** Dil ve tema seçimi `useLocalStorage` hook'u ile saklanıyor. İlk ziyarette tarayıcının dil ve renk tercihi kullanılıyor.
+- **Responsive:** Mobil, tablet ve masaüstü uyumlu.
+- **Figma tasarımına birebir uyum:** Renkler, fontlar ve ölçüler tasarımdan alındı.
 
-## React Compiler
+## Kullanılan Teknolojiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite
+- Tailwind CSS v4
+- Context API (tema ve dil)
+- Axios, React Toastify
+- React Icons
 
-## Expanding the Oxlint configuration
+## Proje Yapısı
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+src/
+├── components/   # Her bölüm ayrı bir component (Hero, Skills, Profile, Projects, Footer)
+├── context/      # ThemeContext ve LanguageContext
+├── hooks/        # useLocalStorage, useTheme, useLanguage
+├── data/         # TR/EN site içeriği
+└── assets/       # Görseller
+```
+
+## Kurulum
+
+```bash
+npm install
+npm run dev
+```
+
+Uygulama `http://localhost:5173` adresinde açılır.
