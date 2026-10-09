@@ -27,7 +27,7 @@ export default function Profile() {
 
           <article className="md:pt-10">
             <h3 className="font-serif text-[28px]">
-              <Marker barClassName="-left-2 top-1/2 h-1/3 w-[85%] bg-marker">{profile.aboutTitle}</Marker>
+              <Marker barClassName="-left-2 right-0 top-1/2 h-1/3 bg-marker">{profile.aboutTitle}</Marker>
             </h3>
             {profile.about.map((paragraph) => (
               <p key={paragraph} className="mt-6 text-lg leading-relaxed">
