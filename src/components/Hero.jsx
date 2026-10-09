@@ -3,7 +3,7 @@ import useLanguage from '../hooks/useLanguage'
 import Header from './Header'
 import Highlight from './Highlight'
 import Marker from './Marker'
-import heroPhoto from '../assets/sinem-1.jpg'
+import heroPhoto from '../assets/sinem.jpg'
 
 // Desktop sizes and spacing are measured from the Figma frame (1440px wide).
 export default function Hero() {
@@ -61,7 +61,7 @@ export default function Hero() {
             <img
               src={heroPhoto}
               alt={hero.photoAlt}
-              className="relative aspect-square w-full rounded-3xl object-cover object-[60%_30%]"
+              className="relative aspect-square w-full rounded-3xl object-cover"
             />
           </div>
         </div>
