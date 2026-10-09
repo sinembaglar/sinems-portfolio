@@ -30,6 +30,7 @@ src/
 ├── components/   # Her bölüm ayrı bir component (Hero, Skills, Profile, Projects, Footer)
 ├── context/      # ThemeContext ve LanguageContext
 ├── hooks/        # useLocalStorage, useTheme, useLanguage, useRemoteContent
+├── reducers/     # API isteğinin durumu (request / success / failure) için useReducer
 ├── data/         # TR/EN site içeriği
 └── assets/       # Görseller
 ```
