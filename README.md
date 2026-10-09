@@ -2,6 +2,8 @@
 
 React ile geliştirdiğim kişisel portfolyo sitem. Workintech Full Stack Developer programının S12 Frontend Challenge projesi.
 
+**Canlı demo:** https://sinems-portfolio.vercel.app
+
 ## Özellikler
 
 - **Türkçe / İngilizce:** Dil yönetimi i18n paketi kullanmadan Context API ile yapıldı. Tüm metinler tek bir veri dosyasında (`src/data/data.js`), component'ler metinleri buradan okuyor.
