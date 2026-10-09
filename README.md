@@ -33,12 +33,12 @@ src/
 └── assets/       # Görseller
 ```
 
-## Kurulum
+## Yerel Kurulum
 
 ```bash
 npm install
-cp .env.example .env.local   # reqres API key'ini ekle: https://app.reqres.in/api-keys
+cp .env.example .env.local
 npm run dev
 ```
 
-Uygulama `http://localhost:5173` adresinde açılır.
+`.env.local` dosyasına [reqres.in](https://app.reqres.in/api-keys) API key'ini ekle. Uygulama `http://localhost:5173` adresinde açılır.

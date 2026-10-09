@@ -15,7 +15,7 @@ export default function Skills() {
           {skills.title}
         </h2>
 
-        <ul className="mt-12 flex flex-wrap justify-center gap-x-9 gap-y-8 md:mt-14">
+        <ul className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-8 xl:gap-x-9 md:mt-14">
           {skills.items.map((skill) => {
             const { Icon, tile } = skillIcons[skill]
             return (

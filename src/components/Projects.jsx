@@ -11,7 +11,7 @@ export default function Projects() {
         {projects.title}
       </h2>
 
-      <div className="mt-12 grid gap-x-16 gap-y-20 md:mt-[68px] md:grid-cols-2">
+      <div className="mt-12 grid gap-x-16 gap-y-20 md:mt-[68px] lg:grid-cols-2">
         {projects.items.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} labels={projects} />
         ))}

@@ -13,27 +13,27 @@ export default function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden bg-surface">
       {/* Decorative shapes from the design */}
-      <span aria-hidden="true" className="absolute top-0 left-[28%] hidden size-28 -translate-y-1/2 rounded-full bg-decor md:block" />
+      <span aria-hidden="true" className="absolute top-0 left-[28%] hidden size-28 -translate-y-1/2 rounded-full bg-decor lg:block" />
       <span aria-hidden="true" className="absolute top-[540px] right-0 hidden h-14 w-32 translate-x-1/4 rounded-full bg-brand lg:block" />
-      <span aria-hidden="true" className="absolute bottom-0 left-[76%] hidden size-30 translate-y-1/2 rounded-full border-[20px] border-decor md:block" />
+      <span aria-hidden="true" className="absolute bottom-0 left-[76%] hidden size-30 translate-y-1/2 rounded-full border-[20px] border-decor lg:block" />
 
-      <div className="relative container-hero pt-10 pb-20 md:pt-[63px] md:pb-24">
+      <div className="relative container-hero pt-10 pb-20 lg:pt-[63px] lg:pb-24">
         <Header />
 
-        <div className="mt-10 grid items-start gap-14 md:mt-[50px] md:grid-cols-[1fr_auto] md:gap-12">
-          <div className="max-w-[655px] md:pl-[25px]">
-            <p className="text-2xl leading-[1.21] tracking-[0.14em] md:text-[30px]">{hero.greeting}</p>
+        <div className="mt-10 grid items-start gap-14 lg:mt-[50px] lg:grid-cols-[1fr_auto] lg:gap-12">
+          <div className="max-w-[655px] lg:pl-[25px]">
+            <p className="text-2xl leading-[1.21] tracking-[0.14em] lg:text-[30px]">{hero.greeting}</p>
             <h1
               id="hero-title"
-              className="mt-5 text-3xl leading-[1.5] font-medium tracking-[0.01em] md:mt-[17px] md:text-[42px] md:leading-[64px]"
+              className="mt-5 text-3xl leading-[1.5] font-medium tracking-[0.01em] lg:mt-[17px] lg:text-[42px] lg:leading-[64px]"
             >
-              <Marker barClassName="-left-[15px] right-0 top-[38px] h-[30px] bg-brand max-md:top-[55%] max-md:h-[45%] max-md:-left-3">
+              <Marker barClassName="-left-[15px] right-0 top-[38px] h-[30px] bg-brand max-lg:top-[55%] max-lg:h-[45%] max-lg:-left-3">
                 {hero.name}
               </Marker>{' '}
               {hero.intro}
             </h1>
 
-            <ul className="mt-10 flex gap-4 text-4xl leading-none md:mt-[60px]">
+            <ul className="mt-10 flex gap-4 text-4xl leading-none lg:mt-[60px]">
               <li>
                 <a href={hero.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="block text-icon transition-colors hover:text-brand">
                   <FaLinkedinIn />
@@ -46,7 +46,7 @@ export default function Hero() {
               </li>
             </ul>
 
-            <p className="mt-[22px] text-base leading-8 tracking-[0.05em] md:text-lg">
+            <p className="mt-[22px] text-base leading-8 tracking-[0.05em] lg:text-lg">
               <Highlight text={hero.availability} className="text-accent" />
               <br />
               {hero.contactLabel}{' '}
@@ -56,7 +56,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="relative mx-auto mt-6 w-64 md:mt-[52px] md:mr-[19px] md:w-[340px]">
+          <div className="relative mx-auto mt-6 w-64 lg:mt-[52px] lg:mr-[19px] lg:w-[340px]">
             <span aria-hidden="true" className="absolute -top-5 -left-5 size-full rounded-3xl bg-brand" />
             <img
               src={heroPhoto}
