@@ -27,7 +27,7 @@ export default function Hero() {
               id="hero-title"
               className="mt-5 text-3xl leading-[1.5] font-medium tracking-[0.01em] md:mt-[17px] md:text-[42px] md:leading-[64px]"
             >
-              <Marker barClassName="-left-[15px] top-[38px] h-[30px] w-[148px] bg-brand max-md:top-[55%] max-md:h-[45%] max-md:w-[70%] max-md:-left-3">
+              <Marker barClassName="-left-[15px] right-0 top-[38px] h-[30px] bg-brand max-md:top-[55%] max-md:h-[45%] max-md:-left-3">
                 {hero.name}
               </Marker>{' '}
               {hero.intro}
