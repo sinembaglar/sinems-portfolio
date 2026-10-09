@@ -1,10 +1,19 @@
+import { lazy, Suspense } from 'react'
 import { ToastContainer } from 'react-toastify'
 import Hero from './components/Hero'
-import Skills from './components/Skills'
-import Profile from './components/Profile'
-import Projects from './components/Projects'
-import Footer from './components/Footer'
 import useTheme from './hooks/useTheme'
+
+// The hero is the first screen, so it loads with the main bundle.
+// Sections below the fold are split into their own chunks and loaded right after.
+const Skills = lazy(() => import('./components/Skills'))
+const Profile = lazy(() => import('./components/Profile'))
+const Projects = lazy(() => import('./components/Projects'))
+const Footer = lazy(() => import('./components/Footer'))
+
+// Keeps space for the lazy sections so the page does not jump while they load.
+function SectionFallback() {
+  return <div aria-hidden="true" className="min-h-screen bg-page" />
+}
 
 export default function App() {
   const { theme } = useTheme()
@@ -13,11 +22,15 @@ export default function App() {
     <>
       <main>
         <Hero />
-        <Skills />
-        <Profile />
-        <Projects />
+        <Suspense fallback={<SectionFallback />}>
+          <Skills />
+          <Profile />
+          <Projects />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <ToastContainer position="bottom-right" autoClose={2500} theme={theme} />
     </>
   )

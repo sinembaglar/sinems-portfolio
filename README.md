@@ -11,6 +11,7 @@ React ile geliştirdiğim kişisel portfolyo sitem. Workintech Full Stack Develo
 - **Tercihler hatırlanıyor:** Dil ve tema seçimi `useLocalStorage` hook'u ile saklanıyor. İlk ziyarette tarayıcının dil ve renk tercihi kullanılıyor.
 - **Dış servis ile iletişim:** Seçili dilin içeriği Axios ile [reqres.in](https://reqres.in)'e POST ediliyor ve sayfada sunucudan dönen cevap gösteriliyor. Her dil bir kez istenip önbelleğe alınıyor. Yükleniyor, başarılı ve hata durumları React Toastify ile bildiriliyor. İstek başarısız olursa yerel içerik gösteriliyor.
 - **Responsive:** Mobil, tablet ve masaüstü uyumlu.
+- **Performans:** İlk ekrandaki Hero hemen yükleniyor, alttaki bölümler `React.lazy` ve `Suspense` ile ayrı parçalara bölünüp sonradan yükleniyor (code splitting). Proje görselleri lazy loading ile ekrana yaklaşınca indiriliyor.
 - **Figma tasarımına birebir uyum:** Renkler, fontlar ve ölçüler tasarımdan alındı.
 
 ## Kullanılan Teknolojiler

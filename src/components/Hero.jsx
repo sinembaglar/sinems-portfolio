@@ -61,6 +61,7 @@ export default function Hero() {
             <img
               src={heroPhoto}
               alt={hero.photoAlt}
+              fetchPriority="high"
               className="relative aspect-square w-full rounded-3xl object-cover"
             />
           </div>
