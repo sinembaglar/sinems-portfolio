@@ -18,11 +18,11 @@ export default function Footer() {
     .map(([key, url]) => ({ key, url: key === 'email' ? `mailto:${url}` : url }))
 
   return (
-    <footer className="container-page flex flex-col items-center gap-10 py-24 md:flex-row md:items-start md:justify-center md:gap-14">
+    <footer className="container-page flex flex-col items-center gap-10 pt-24 pb-24 md:flex-row md:pt-[81px] md:pb-[165px] md:items-start md:justify-center md:gap-14">
       <p className="max-w-[480px] text-center text-3xl leading-[1.45] font-medium md:text-right md:text-[42px]">
         <Highlight
           text={footer.message}
-          wrap={(words) => <Marker barClassName="inset-x-0 top-[62%] h-[28%] bg-marker">{words}</Marker>}
+          wrap={(words) => <Marker barClassName="inset-x-0 top-[62%] h-[28%] bg-marker-footer">{words}</Marker>}
         />
       </p>
 

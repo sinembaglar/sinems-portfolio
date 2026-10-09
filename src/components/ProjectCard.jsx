@@ -15,19 +15,19 @@ export default function ProjectCard({ project, index, labels }) {
   const image = projectImages[project.id]
 
   return (
-    <article className={`flex flex-col rounded-xl px-10 pt-12 ${cardColors[index % cardColors.length]}`}>
-      <h3 className="font-serif text-[32px] font-bold">{project.title}</h3>
-      <p className="mt-5 leading-relaxed">{project.description}</p>
+    <article className={`flex flex-col rounded-xl px-6 pt-11 sm:px-10 ${cardColors[index % cardColors.length]}`}>
+      <h3 className="font-serif text-[29px] font-bold tracking-[0.04em]">{project.title}</h3>
+      <p className="mt-5 text-[15px] leading-6 tracking-[0.025em]">{project.description}</p>
 
-      <ul className="mt-6 flex flex-wrap gap-3">
+      <ul className="mt-4 flex flex-wrap gap-2.5">
         {project.tags.map((tag) => (
-          <li key={tag} lang="en" className="rounded-full bg-tag px-5 py-1.5 font-serif text-base font-bold lowercase">
+          <li key={tag} lang="en" className="flex h-8 items-center rounded-full bg-tag px-[21px] font-serif text-base font-bold tracking-[0.01em] lowercase">
             {tag}
           </li>
         ))}
       </ul>
 
-      <div className="mt-8 flex justify-between gap-4 text-xl font-semibold">
+      <div className="mt-9 flex justify-between gap-4 text-[19px] font-medium tracking-[0.03em]">
         <a href={project.github} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
           {labels.githubLabel}
         </a>
@@ -39,8 +39,8 @@ export default function ProjectCard({ project, index, labels }) {
       </div>
 
       {/* Laptop mockup; the base overhangs the bottom of the card like in the design */}
-      <div className="-mx-10 mt-auto -mb-8 pt-12 transition-transform motion-safe:hover:-translate-y-1">
-        <div className="mx-auto w-[76%] rounded-t-2xl border-2 border-b-0 border-[#9a9a9a] bg-black p-2.5 pb-3">
+      <div className="-mx-6 mt-auto -mb-8 pt-12 transition-transform sm:-mx-10 motion-safe:hover:-translate-y-1">
+        <div className="mx-auto w-[75%] rounded-t-2xl border-2 border-b-0 border-[#9a9a9a] bg-black p-2.5 pb-3">
           {image ? (
             <img src={image} alt={project.title} loading="lazy" className="aspect-[16/10] w-full object-cover object-top" />
           ) : (

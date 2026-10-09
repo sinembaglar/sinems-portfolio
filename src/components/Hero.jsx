@@ -5,6 +5,7 @@ import Highlight from './Highlight'
 import Marker from './Marker'
 import heroPhoto from '../assets/sinem-1.jpg'
 
+// Desktop sizes and spacing are measured from the Figma frame (1440px wide).
 export default function Hero() {
   const { content } = useLanguage()
   const { hero } = content
@@ -16,31 +17,36 @@ export default function Hero() {
       <span aria-hidden="true" className="absolute top-[540px] right-0 hidden h-14 w-32 translate-x-1/4 rounded-full bg-brand lg:block" />
       <span aria-hidden="true" className="absolute bottom-0 left-[76%] hidden size-30 translate-y-1/2 rounded-full border-[20px] border-decor md:block" />
 
-      <div className="relative container-page pt-16 pb-24 md:pb-28">
+      <div className="relative container-hero pt-10 pb-20 md:pt-[63px] md:pb-24">
         <Header />
 
-        <div className="mt-12 grid items-center gap-14 md:mt-14 md:grid-cols-[1fr_auto] md:gap-12">
-          <div className="max-w-[630px]">
-            <p className="text-2xl tracking-wide">{hero.greeting}</p>
-            <h1 id="hero-title" className="mt-6 text-3xl leading-[1.5] font-medium tracking-wide md:text-[42px]">
-              <Marker barClassName="-left-3 top-[55%] h-[45%] w-[70%] bg-brand">{hero.name}</Marker>{' '}
+        <div className="mt-10 grid items-start gap-14 md:mt-[50px] md:grid-cols-[1fr_auto] md:gap-12">
+          <div className="max-w-[655px] md:pl-[25px]">
+            <p className="text-2xl leading-[1.21] tracking-[0.14em] md:text-[30px]">{hero.greeting}</p>
+            <h1
+              id="hero-title"
+              className="mt-5 text-3xl leading-[1.5] font-medium tracking-[0.01em] md:mt-[17px] md:text-[42px] md:leading-[64px]"
+            >
+              <Marker barClassName="-left-[15px] top-[38px] h-[30px] w-[148px] bg-brand max-md:top-[55%] max-md:h-[45%] max-md:w-[70%] max-md:-left-3">
+                {hero.name}
+              </Marker>{' '}
               {hero.intro}
             </h1>
 
-            <ul className="mt-12 flex gap-4 text-4xl">
+            <ul className="mt-10 flex gap-4 text-4xl leading-none md:mt-[60px]">
               <li>
-                <a href={hero.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-brand">
+                <a href={hero.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="block text-icon transition-colors hover:text-brand">
                   <FaLinkedinIn />
                 </a>
               </li>
               <li>
-                <a href={hero.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-brand">
+                <a href={hero.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="block text-icon transition-colors hover:text-brand">
                   <FaGithub />
                 </a>
               </li>
             </ul>
 
-            <p className="mt-6 text-lg leading-loose tracking-wide">
+            <p className="mt-[22px] text-base leading-8 tracking-[0.05em] md:text-lg">
               <Highlight text={hero.availability} className="text-accent" />
               <br />
               {hero.contactLabel}{' '}
@@ -50,7 +56,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="relative mx-auto mt-6 w-64 md:mt-0 md:w-[340px]">
+          <div className="relative mx-auto mt-6 w-64 md:mt-[52px] md:mr-[19px] md:w-[340px]">
             <span aria-hidden="true" className="absolute -top-5 -left-5 size-full rounded-3xl bg-brand" />
             <img
               src={heroPhoto}

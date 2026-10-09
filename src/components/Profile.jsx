@@ -7,13 +7,13 @@ export default function Profile() {
 
   return (
     <section aria-labelledby="profile-title" className="bg-surface">
-      <div className="container-page py-20">
-        <h2 id="profile-title" className="text-center text-4xl font-medium md:text-[40px]">
+      <div className="container-page py-16 md:py-[71px]">
+        <h2 id="profile-title" className="text-center text-4xl font-medium md:text-5xl md:leading-[1.21]">
           {profile.title}
         </h2>
 
         <div className="mt-12 grid items-start gap-12 md:grid-cols-2 md:gap-16">
-          <article className="rounded-md bg-card px-10 py-10 shadow-[10px_10px_0_0] shadow-card-shadow">
+          <article className="rounded-md bg-card px-6 py-8 sm:px-10 sm:py-10 shadow-[10px_10px_0_0] shadow-card-shadow">
             <h3 className="font-serif text-[28px] text-brand">{profile.basicTitle}</h3>
             <dl className="mt-6 grid grid-cols-[auto_1fr] gap-x-10 gap-y-5 text-lg">
               {profile.basic.map(({ label, value }) => (

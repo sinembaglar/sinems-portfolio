@@ -6,7 +6,7 @@
 /*
   Color tokens. Each theme only swaps the variable values, so components use
   one class (e.g. bg-surface) instead of repeating light/dark pairs.
-  Light values are taken from the Figma design; dark values are still approximations.
+  Values are taken from the Figma design (Light and Dark pages).
 */
 :root {
   --page: #ffffff;
@@ -14,10 +14,13 @@
   --card: #ffffff;
   --card-shadow: #a3a3a3;
   --ink: #0a0a14;
+  --icon: #0a0a14;
   --muted: #777777;
+  --subtle: #777777;
   --brand: #e92577;
   --accent: #af0b48;
   --marker: #81bcff;
+  --marker-footer: #81bcff;
   --decor: #d9d9d9;
   --decor-dark: #525252;
   --project-1: #ddeefe;
@@ -31,25 +34,28 @@
 }
 
 .dark {
-  --page: #2a262b;
-  --surface: #252128;
+  --page: #484148;
+  --surface: #2a262c;
   --card: #525252;
-  --card-shadow: #1a171c;
+  --card-shadow: #3e3c3e;
   --ink: #ffffff;
-  --muted: #b5b5b5;
+  --icon: #d9d9d9;
+  --muted: #d9d9d9;
+  --subtle: #777777;
   --brand: #e92577;
-  --accent: #f472b6;
-  --marker: #4b6fa8;
+  --accent: #e92577;
+  --marker: #81bcff;
+  --marker-footer: #3968a0;
   --decor: #525252;
-  --decor-dark: #9ca3af;
+  --decor-dark: #525252;
   --project-1: #2d3235;
   --project-2: #495351;
-  --project-3: #3f3439;
+  --project-3: #4a3b42;
   --tag: #525252;
-  --toggle-track: #3a3a3a;
+  --toggle-track: #000000;
   --toggle-knob: #ffe86d;
-  --link-github: #60a5fa;
-  --link-linkedin: #38bdf8;
+  --link-github: #81bcff;
+  --link-linkedin: #419ccb;
 }
 
 @theme inline {
@@ -61,10 +67,13 @@
   --color-card: var(--card);
   --color-card-shadow: var(--card-shadow);
   --color-ink: var(--ink);
+  --color-icon: var(--icon);
   --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
   --color-brand: var(--brand);
   --color-accent: var(--accent);
   --color-marker: var(--marker);
+  --color-marker-footer: var(--marker-footer);
   --color-decor: var(--decor);
   --color-decor-dark: var(--decor-dark);
   --color-project-1: var(--project-1);
@@ -77,8 +86,14 @@
   --color-link-linkedin: var(--link-linkedin);
 }
 
+/* Content column from the design: 1064px (193px side margins at 1440px). */
 @utility container-page {
-  @apply mx-auto w-full max-w-[1150px] px-6;
+  @apply mx-auto w-full max-w-[1112px] px-6;
+}
+
+/* The hero is wider in the design: 1138px, ending where the mode switch ends. */
+@utility container-hero {
+  @apply mx-auto w-full max-w-[1186px] px-6;
 }
 
 body {
