@@ -21,6 +21,7 @@ React ile geliştirdiğim kişisel portfolyo sitem. Workintech Full Stack Develo
 - Context API (tema ve dil)
 - Axios, React Toastify
 - React Icons
+- Cypress (uçtan uca testler), GitHub Actions (CI)
 
 ## Proje Yapısı
 
@@ -44,3 +45,19 @@ npm run dev
 ```
 
 `.env.local` dosyasına [reqres.in](https://app.reqres.in/api-keys) API key'ini ekle. Uygulama `http://localhost:5173` adresinde açılır.
+
+## Testler
+
+```bash
+npm run build
+npm run test:e2e   # önizleme sunucusunu açar ve Cypress testlerini çalıştırır
+npm run cy:open    # testleri Cypress arayüzünde açar (önce npm run preview)
+```
+
+Cypress testleri sayfanın bölümlerini, dil ve tema değişimini, tercihlerin localStorage'da saklanmasını ve API akışını (istek, önbellek, hata durumu) kontrol ediyor. reqres istekleri `cy.intercept` ile taklit edildiği için testler internete ve API key'e bağlı değil.
+
+## Geliştirme Akışı
+
+- Geliştirme `dev` branch'inde yapılıyor.
+- Her push'ta GitHub Actions lint, build ve Cypress testlerini çalıştırıyor.
+- Testler geçince `dev`, pull request ile `main`'e birleştiriliyor ve Vercel `main`'i otomatik olarak yayına alıyor.

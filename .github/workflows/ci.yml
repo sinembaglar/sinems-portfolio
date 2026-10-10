@@ -1,0 +1,39 @@
+name: CI
+
+# Runs on every push to dev and main, and on pull requests into main.
+# Work happens on dev; it is merged into main through a pull request once this passes,
+# and Vercel deploys main.
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx cypress install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: End-to-end tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: npm run preview
+          wait-on: http://localhost:4173
