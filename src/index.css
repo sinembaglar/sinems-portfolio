@@ -1,4 +1,80 @@
 @import 'tailwindcss';
 
-/* dark mode will be controlled with a "dark" class on the html tag */
+/* dark mode is controlled with a "dark" class on the html tag */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Colors from the Figma design (Light page).
+  Components use these through Tailwind classes like bg-surface or text-brand.
+*/
+:root {
+  --page: #ffffff;
+  --surface: #f4f4f4;
+  --card: #ffffff;
+  --card-shadow: #a3a3a3;
+  --ink: #0a0a14;
+  --icon: #0a0a14;
+  --muted: #777777;
+  --subtle: #777777;
+  --brand: #e92577;
+  --accent: #af0b48;
+  --marker: #81bcff;
+  --marker-footer: #81bcff;
+  --decor: #d9d9d9;
+  --decor-dark: #525252;
+  --project-1: #ddeefe;
+  --project-2: #daf6f1;
+  --project-3: #fde8f1;
+  --tag: #ffffff;
+  --toggle-track: #e92577;
+  --toggle-knob: #ffe86d;
+  --github: #1769ff;
+  --linkedin: #0277b5;
+}
+
+/* Tailwind theme: classes like bg-surface or text-brand use the variables above */
+@theme inline {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-shadow: var(--card-shadow);
+  --color-ink: var(--ink);
+  --color-icon: var(--icon);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-brand: var(--brand);
+  --color-accent: var(--accent);
+  --color-marker: var(--marker);
+  --color-marker-footer: var(--marker-footer);
+  --color-decor: var(--decor);
+  --color-decor-dark: var(--decor-dark);
+  --color-project-1: var(--project-1);
+  --color-project-2: var(--project-2);
+  --color-project-3: var(--project-3);
+  --color-tag: var(--tag);
+  --color-toggle-track: var(--toggle-track);
+  --color-toggle-knob: var(--toggle-knob);
+  --color-github: var(--github);
+  --color-linkedin: var(--linkedin);
+}
+
+/* Content width in the design is 1064px (1440px frame) */
+@utility container-content {
+  @apply mx-auto w-full max-w-[1112px] px-6;
+}
+
+/* The hero area is a bit wider in the design: 1138px */
+@utility container-hero {
+  @apply mx-auto w-full max-w-[1186px] px-6;
+}
+
+body {
+  @apply bg-page font-sans text-ink antialiased transition-colors duration-300;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand;
+}
