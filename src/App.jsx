@@ -1,38 +1,27 @@
-import useTheme from './hooks/useTheme'
+import Header from './components/Header'
 import useLanguage from './hooks/useLanguage'
 
-// Temporary page to check that theme and language switching work.
-// The real sections will replace this in the next steps.
+// Temporary page: the real header is ready, the other sections come in the next steps.
 function App() {
-  const { theme, toggleTheme } = useTheme()
-  const { content, toggleLanguage } = useLanguage()
-  const { changeLanguage } = content.header
+  const { content } = useLanguage()
 
   return (
-    <div className="min-h-screen bg-white p-10 text-gray-900 dark:bg-gray-900 dark:text-white">
-      <div className="flex justify-end gap-4 text-sm font-bold">
-        <button onClick={toggleTheme}>
-          {theme === 'dark' ? content.header.lightMode : content.header.darkMode}
-        </button>
-        <span>|</span>
-        <button onClick={toggleLanguage}>
-          {changeLanguage.before}
-          {changeLanguage.highlight}
-          {changeLanguage.after}
-        </button>
+    <div className="min-h-screen bg-surface">
+      <div className="container-hero pt-10 lg:pt-[63px]">
+        <Header />
+
+        <p className="mt-10 text-xl">{content.hero.greeting}</p>
+        <h1 className="mt-2 text-3xl font-bold">
+          {content.hero.name} {content.hero.intro}
+        </h1>
+
+        <h2 className="mt-10 text-2xl">{content.skills.title}</h2>
+        <ul className="mt-2">
+          {content.skills.list.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
       </div>
-
-      <p className="mt-10 text-xl">{content.hero.greeting}</p>
-      <h1 className="mt-2 text-3xl font-bold">
-        {content.hero.name} {content.hero.intro}
-      </h1>
-
-      <h2 className="mt-10 text-2xl">{content.skills.title}</h2>
-      <ul className="mt-2">
-        {content.skills.list.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
     </div>
   )
 }
