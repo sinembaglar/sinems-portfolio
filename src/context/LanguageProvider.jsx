@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
-import data from '../data/data'
+import useContent from '../hooks/useContent'
 import { LanguageContext } from './contexts'
 
 // If there is no saved language, use the browser language.
@@ -8,6 +8,8 @@ const browserLanguage = navigator.language.startsWith('tr') ? 'tr' : 'en'
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useLocalStorage('language', browserLanguage)
+  // content of the selected language, sent to reqres and taken from its response
+  const { content, status } = useContent(language)
 
   useEffect(() => {
     document.documentElement.lang = language
@@ -18,7 +20,7 @@ export function LanguageProvider({ children }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, content: data[language] }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, content, status }}>
       {children}
     </LanguageContext.Provider>
   )
