@@ -66,8 +66,8 @@ src/
 ## Kurulum
 
 ```bash
-git clone https://github.com/sinembaglar/sinems-portfolio-2.git
-cd sinems-portfolio-2
+git clone https://github.com/sinembaglar/sinems-portfolio.git
+cd sinems-portfolio
 npm install
 cp .env.example .env.local
 npm run dev
