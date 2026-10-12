@@ -4,8 +4,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  Colors from the Figma design (Light page).
-  Components use these through Tailwind classes like bg-surface or text-brand.
+  Colors from the Figma design (Light and Dark pages).
+  Only the variable values change in dark mode, so components don't need
+  a separate dark: class for every color.
 */
 :root {
   --page: #ffffff;
@@ -30,6 +31,31 @@
   --toggle-knob: #ffe86d;
   --github: #1769ff;
   --linkedin: #0277b5;
+}
+
+.dark {
+  --page: #484148;
+  --surface: #2a262c;
+  --card: #525252;
+  --card-shadow: #3e3c3e;
+  --ink: #ffffff;
+  --icon: #d9d9d9;
+  --muted: #d9d9d9;
+  --subtle: #777777;
+  --brand: #e92577;
+  --accent: #e92577;
+  --marker: #81bcff;
+  --marker-footer: #3968a0;
+  --decor: #525252;
+  --decor-dark: #525252;
+  --project-1: #2d3235;
+  --project-2: #495351;
+  --project-3: #4a3b42;
+  --tag: #525252;
+  --toggle-track: #000000;
+  --toggle-knob: #ffe86d;
+  --github: #81bcff;
+  --linkedin: #419ccb;
 }
 
 /* Tailwind theme: classes like bg-surface or text-brand use the variables above */
