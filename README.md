@@ -2,6 +2,8 @@
 
 Kişisel portfolyo sitem. Workintech Full Stack Developer programının **S12 Frontend Challenge** projesi olarak React ile geliştirdim.
 
+**Canlı demo:** https://sinems-portfolio.vercel.app
+
 Site Figma'daki tasarıma birebir uygun olarak hazırlandı. Türkçe ve İngilizce içerik, açık ve koyu tema desteği var, mobil, tablet ve masaüstünde çalışıyor.
 
 ## Özellikler
