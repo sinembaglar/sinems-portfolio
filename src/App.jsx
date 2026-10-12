@@ -2,16 +2,20 @@ import Hero from './components/Hero'
 import Skills from './components/Skills'
 import Profile from './components/Profile'
 import Projects from './components/Projects'
+import Footer from './components/Footer'
 
-// The page is built section by section. The footer comes next.
+// All sections of the design are on the page now.
 function App() {
   return (
-    <main>
-      <Hero />
-      <Skills />
-      <Profile />
-      <Projects />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <Skills />
+        <Profile />
+        <Projects />
+      </main>
+      <Footer />
+    </>
   )
 }
 
